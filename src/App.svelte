@@ -21,24 +21,101 @@
 	// const num = 0;
 
 	// List Rendering ------------>
-	const names = ['Bruce', 'Clark', 'Diana']
-	const fullNames = [
-		{ first: 'Bruce', last: 'Wayne' },
-		{ first: 'Clark', last: 'Kent' },
-		{ first: 'Diana', last: 'Prince' }
-	]
+	// const names = ['Bruce', 'Clark', 'Diana']
+	// const fullNames = [
+	// 	{ first: 'Bruce', last: 'Wayne' },
+	// 	{ first: 'Clark', last: 'Kent' },
+	// 	{ first: 'Diana', last: 'Prince' }
+	// ]
+
+	// Inline Event Handling ------------>
+	// let count = 0;
+
+	// Event Handling ------------>
+	// let count = 0;
+	// function handleClick(event){
+	// 	console.log(event);
+	// 	count += 1;
+	// }
+	// Form Handling ------------>
+		const formValues = {
+			name: '',
+			profileSummaries: '',
+			country: '',
+			jobLocation: [],
+			remoteWork: false,
+			skills: []
+		};
+
 
 </script>
 
 <main>
+	<!-- Form Handling -->
+	<div>
+		<pre>
+			{JSON.stringify(formValues, null, 2)}
+		</pre>
+	</div>
+	<form>
+		<div>
+			<label for="name"></label>
+			<input type="text" name="name" id="name" bind:value={formValues.name}>
+		</div>
+		<div>
+			<label for="profile">Profile Summary</label>
+			<textarea id="profile" bind:value={formValues.profileSummaries}></textarea>
+		</div>
+		<div>
+			<label for="country">Country</label>
+			<select name="" id="country" bind:value={formValues.country}>
+				<option value="">Select a country</option>
+				<option value="US">United States</option>
+				<option value="MX">Mexico</option>
+				<option value="CA">Canada</option>
+				<option value="BR">Brazil</option>
+			</select>
+		</div>
+				<div>
+			<label for="job-location">Job Location</label>
+			<select name="" id="job-location" bind:value={formValues.jobLocation} multiple>
+				<option value="">Select a country</option>
+				<option value="US">United States</option>
+				<option value="MX">Mexico</option>
+				<option value="CA">Canada</option>
+				<option value="BR">Brazil</option>
+			</select>
+		</div>
+		<div>
+			<input type="checkbox" name="" id="remoteWork" bind:checked={formValues.remoteWork}>
+			<label for="remoteWork">Open to Remote Work?</label>
+		</div>
+		<div>
+			<label for="skills">Skills</label>
+			<input type="checkbox" name="html" id="html" bind:group={formValues.skills}>
+			<label for="html">HTML</label>
+			<input type="checkbox" name="css" id="css" bind:group={formValues.skills}>
+			<label for="css">CSS</label>
+			<input type="checkbox" name="js" id="js" bind:group={formValues.skills}>
+			<label for="js">JavaScript</label>
+		</div>
+	</form>
 
-	<!-- List Rendering -->
-		{#each fullNames as name, index}
+	<!-- Event Handling
+	<button on:click={handleClick}>Count {count}</button>
+-->
+
+	<!-- Inline Event Handling 
+	<button on:click={() => (count = count + 1)}>Count {count}</button>
+	-->
+	<!-- List Rendering
+		{#each fullNames as name, index(name.last)}
 		<h2>{index + 1} {name.first} {name.last}</h2>
 		{/each}
-		{#each names as name, index}
+		
+		{#each names as name, index(name)}
 		<h1>{index + 1} {name}</h1>
-		{/each}
+		{/each} -->
 
 	<!-- Conditional Rendering 
 	{#if num === 0 }
@@ -75,6 +152,9 @@
 </main>
 
 <style>
+	input + label {
+		display: inline-flex;
+	}
 	/* .underlined{
 		text-decoration: underline;
 	}

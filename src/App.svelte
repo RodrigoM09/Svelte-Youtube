@@ -44,7 +44,8 @@
 			country: '',
 			jobLocation: [],
 			remoteWork: false,
-			skills: []
+			skills: [],
+			yearsofExperience: ''
 		};
 
 
@@ -98,6 +99,15 @@
 			<label for="css">CSS</label>
 			<input type="checkbox" name="js" id="js" bind:group={formValues.skills}>
 			<label for="js">JavaScript</label>
+		</div>
+		<div>
+			<label for="years">Years of Experience</label>
+			<input type="radio" value="0-2" id="0-2" bind:group={formValues.yearsofExperience}>
+			<label for="0-2">0-2</label>
+			<input type="radio" value="3-5" id="3-5" bind:group={formValues.yearsofExperience}>
+			<label for="3-5">3-5</label>
+			<input type="radio" value="6-10" id="6-10" bind:group={formValues.yearsofExperience}>
+			<label for="6-10">6-10</label>
 		</div>
 	</form>
 

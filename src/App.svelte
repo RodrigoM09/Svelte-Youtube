@@ -48,6 +48,11 @@
 			yearsofExperience: ''
 		};
 
+		function submitForm(e){
+			e.preventDefault();
+			console.log(formValues);
+			
+		}
 
 </script>
 
@@ -58,7 +63,7 @@
 			{JSON.stringify(formValues, null, 2)}
 		</pre>
 	</div>
-	<form>
+	<form on:submit={submitForm}>
 		<div>
 			<label for="name"></label>
 			<input type="text" name="name" id="name" bind:value={formValues.name}>
@@ -108,7 +113,10 @@
 			<label for="3-5">3-5</label>
 			<input type="radio" value="6-10" id="6-10" bind:group={formValues.yearsofExperience}>
 			<label for="6-10">6-10</label>
+			<input type="radio" value="10+" id="10+" bind:group={formValues.yearsofExperience}>
+			<label for="10+">10+</label>
 		</div>
+		<button>Submit</button>
 	</form>
 
 	<!-- Event Handling

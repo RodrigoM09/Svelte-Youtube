@@ -38,26 +38,60 @@
 	// 	count += 1;
 	// }
 	// Form Handling ------------>
-		const formValues = {
-			name: '',
-			profileSummaries: '',
-			country: '',
-			jobLocation: [],
-			remoteWork: false,
-			skills: [],
-			yearsofExperience: ''
-		};
+		// const formValues = {
+		// 	name: '',
+		// 	profileSummaries: '',
+		// 	country: '',
+		// 	jobLocation: [],
+		// 	remoteWork: false,
+		// 	skills: [],
+		// 	yearsofExperience: ''
+		// };
 
-		function submitForm(e){
-			e.preventDefault();
-			console.log(formValues);
+		// function submitForm(e){
+		// 	e.preventDefault();
+		// 	console.log(formValues);
 			
+		// }
+	
+	// Reactive Declarations ------------>
+	let firstName = 'Bruce';
+	let lastName = 'Wayne';
+	$: fullName = `${firstName} ${lastName}`;
+	let items = [
+		{
+		id: 1,
+		title: 'TV',
+		price: 100
+		},
+		{
+		id: 2,
+		title: 'Phone',
+		price: 200
+		},
+		{
+		id: 3,
+		title: 'Laptop',
+		price: 300
 		}
+	]
+	$: total = items.reduce((total, curr) =>(total = total + curr.price), 0)
 
 </script>
 
 <main>
-	<!-- Form Handling -->
+	<!-- Reactive Declarations -->
+	<button on:click={()=> (items = [...items, {id: 4, title: 'keyboard', price: 50 }])}>Add Items</button>
+	<button on:click={()=> {
+		firstName = 'Clark'
+		lastName = 'Kent'
+	}}>Change Name</button>
+	<h1>Hello {firstName} {lastName}</h1>
+	<h2>{fullName}</h2>
+	<h2>
+		Total - {total}
+	</h2>
+	<!-- Form Handling 
 	<div>
 		<pre>
 			{JSON.stringify(formValues, null, 2)}
@@ -118,7 +152,7 @@
 		</div>
 		<button>Submit</button>
 	</form>
-
+-->
 	<!-- Event Handling
 	<button on:click={handleClick}>Count {count}</button>
 -->

@@ -55,33 +55,52 @@
 		// }
 	
 	// Reactive Declarations ------------>
-	let firstName = 'Bruce';
-	let lastName = 'Wayne';
-	$: fullName = `${firstName} ${lastName}`;
-	let items = [
-		{
-		id: 1,
-		title: 'TV',
-		price: 100
-		},
-		{
-		id: 2,
-		title: 'Phone',
-		price: 200
-		},
-		{
-		id: 3,
-		title: 'Laptop',
-		price: 300
-		}
-	]
-	$: total = items.reduce((total, curr) =>(total = total + curr.price), 0)
-
+	// let firstName = 'Bruce';
+	// let lastName = 'Wayne';
+	// $: fullName = `${firstName} ${lastName}`;
+	// $: { const greet = `Full name is ${firstName} ${lastName}`
+	// 	console.log(greet)
+	// };
+	// let items = [
+	// 	{
+	// 	id: 1,
+	// 	title: 'TV',
+	// 	price: 100
+	// 	},
+	// 	{
+	// 	id: 2,
+	// 	title: 'Phone',
+	// 	price: 200
+	// 	},
+	// 	{
+	// 	id: 3,
+	// 	title: 'Laptop',
+	// 	price: 300
+	// 	}
+	// ]
+	// $: total = items.reduce((total, curr) =>(total = total + curr.price), 0)
+	// let volume = 0;
+	// $: {
+	// 	if(volume < 0){
+	// 		alert('Volume cannot be less than 0')
+	// 		volume = 0;
+	// 	}else if(volume > 20){
+	// 		alert('Volume cannot be greater than 20')
+	// 		volume = 20;
+	// 	}
+	// }
+	// Svelte Component ------------>
+	import Greet from './components/greet.svelte';	
 </script>
 
 <main>
-	<!-- Reactive Declarations -->
-	<button on:click={()=> (items = [...items, {id: 4, title: 'keyboard', price: 50 }])}>Add Items</button>
+	<!-- Svelte Components -->
+	<Greet/>
+	<!-- Reactive Declarations 
+	<h2>Current volume {volume}</h2>
+	<button on:click={() => (volume += 2)}>Increase Volume</button><br>
+	<button on:click={() => (volume -= 2)}>Decrease Volume</button><br>
+	<button on:click={()=> (items = [...items, {id: 4, title: 'keyboard', price: 50 }])}>Add Items</button><br>
 	<button on:click={()=> {
 		firstName = 'Clark'
 		lastName = 'Kent'
@@ -90,7 +109,7 @@
 	<h2>{fullName}</h2>
 	<h2>
 		Total - {total}
-	</h2>
+	</h2> -->
 	<!-- Form Handling 
 	<div>
 		<pre>

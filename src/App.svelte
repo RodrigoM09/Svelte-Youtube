@@ -98,24 +98,37 @@
 	// 	heroName: 'Flash'
 	// }
 	// Context API ------------>
-	import {setContext} from 'svelte';
-	import ComponentC from "./components/ComponentC.svelte";
+	// import {setContext} from 'svelte';
+	// import ComponentC from "./components/ComponentC.svelte";
 
-	const userName = 'Rodrigo';
-	setContext('username-context', userName);
+	// const userName = 'Rodrigo';
+	// setContext('username-context', userName);
+
+	//Component Events ------------>
+	import Popup from "./components/Popup.svelte";
+	let showPopup = false;
+
 </script>
 
 <main>
-	<!-- Context API -->
+	<!-- Component Events -->
+	<button on:click={() => (showPopup = true)}>Show Popup</button>
+	{#if showPopup}
+		<Popup on:close={() => (showPopup = false)} />
+	{/if}
+
+	<!-- Context API 
 	<h2>App Component Username - {userName}</h2>
 	<ComponentC />
+	-->
 
 	<!-- Svelte Components Props 
 	<Greet name='Bruce' heroName='Batman'/>
 	<Greet name='Clark' heroName='Superman'/>
 	<Greet name='Diana' heroName='Wonder Woman'/>
 	<Greet {name} heroName={channel}/>
-	<Greet {...obj}/> -->
+	<Greet {...obj}/> 
+	-->
 
 	<!-- Reactive Declarations 
 	<h2>Current volume {volume}</h2>
@@ -130,7 +143,9 @@
 	<h2>{fullName}</h2>
 	<h2>
 		Total - {total}
-	</h2> -->
+	</h2> 
+	-->
+
 	<!-- Form Handling 
 	<div>
 		<pre>
@@ -192,14 +207,16 @@
 		</div>
 		<button>Submit</button>
 	</form>
--->
+	-->
+
 	<!-- Event Handling
 	<button on:click={handleClick}>Count {count}</button>
--->
+	-->
 
 	<!-- Inline Event Handling 
 	<button on:click={() => (count = count + 1)}>Count {count}</button>
 	-->
+
 	<!-- List Rendering
 		{#each fullNames as name, index(name.last)}
 		<h2>{index + 1} {name.first} {name.last}</h2>
@@ -207,7 +224,8 @@
 		
 		{#each names as name, index(name)}
 		<h1>{index + 1} {name}</h1>
-		{/each} -->
+		{/each} 
+	-->
 
 	<!-- Conditional Rendering 
 	{#if num === 0 }
@@ -218,29 +236,36 @@
 	<h2>The number is </h2>
 	{:else}
 	<h2>The number is not zero</h2>
-	{/if}  -->
+	{/if}  
+	-->
 	
 	<!-- Binding Styles
 	<h2 class="underlined">underlined text</h2>
-	<h2 class={status}>Status</h2> -->
+	<h2 class={status}>Status</h2> 
+	-->
 
 	<!-- Binding Text
-	<h1>Hello {name}</h1> -->
+	<h1>Hello {name}</h1> 
+	-->
 
 	<!-- Binding Classes
 	<h2 class={isPromoted ? 'promoted' : ''}>Movie Title</h2>
 	<h2 class:promoted={isPromoted}>Movie Title 2</h2>
-	<h2 class:promoted>Movie Title 3</h2> -->
+	<h2 class:promoted>Movie Title 3</h2> 
+	-->
 
 	<!-- Binding HTML
 	<p>Welcome to {@html channel}</p>
-	<p>{@html hack}</p> -->
+	<p>{@html hack}</p> 
+	-->
 
 	<!-- Binding Properties
-	<h1 id={headingId}>Heading</h1> -->
+	<h1 id={headingId}>Heading</h1> 
+	-->
 
 	<!-- Binding Attributes
-	<button {disabled}>Bind</button> -->
+	<button {disabled}>Bind</button> 
+	-->
 </main>
 
 <style>

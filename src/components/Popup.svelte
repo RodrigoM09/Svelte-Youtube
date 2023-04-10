@@ -5,5 +5,5 @@
 </script>
 <div>
     <h2>This is a popup</h2>
-    <button on:click={() => dispatch('close')}>Close Popup</button>
+    <button on:click={() => dispatch('close', 'Rodrigo')}>Close Popup</button>
 </div>

@@ -1,26 +1,26 @@
 <script>
-	// Binding Text ------------>
+	// Binding Text -------------------------------------------------------------------------------->
 	// const name = 'Rodrigo'
 
-	// Binding HTML ------------>
+	// Binding HTML -------------------------------------------------------------------------------->
 	// const channel = '<b>Svelte Brasil</b>'
 	// const hack = `<a href="#" onclick="alert('Te Hackearon!')">Hackeado!</a>`
 
-	// Binding ID ------------>
+	// Binding ID -------------------------------------------------------------------------------->
 	// const headingId = 'heading'
 
-	// Binding Attributes ------------>
+	// Binding Attributes -------------------------------------------------------------------------------->
 	// const disabled = true
 	// const isPromoted = true
 	// const promoted = true
 
-	// Binding Classes ------------>
+	// Binding Classes --------------------------------------------------------------------------------->
 	// const status = 'danger'
 
-	// Conditional Rendering ------------>
+	// Conditional Rendering -------------------------------------------------------------------------------->
 	// const num = 0;
 
-	// List Rendering ------------>
+	// List Rendering -------------------------------------------------------------------------------->
 	// const names = ['Bruce', 'Clark', 'Diana']
 	// const fullNames = [
 	// 	{ first: 'Bruce', last: 'Wayne' },
@@ -28,16 +28,17 @@
 	// 	{ first: 'Diana', last: 'Prince' }
 	// ]
 
-	// Inline Event Handling ------------>
+	// Inline Event Handling -------------------------------------------------------------------------------->
 	// let count = 0;
 
-	// Event Handling ------------>
+	// Event Handling -------------------------------------------------------------------------------->
 	// let count = 0;
 	// function handleClick(event){
 	// 	console.log(event);
 	// 	count += 1;
 	// }
-	// Form Handling ------------>
+
+	// Form Handling -------------------------------------------------------------------------------->
 		// const formValues = {
 		// 	name: '',
 		// 	profileSummaries: '',
@@ -54,7 +55,7 @@
 			
 		// }
 	
-	// Reactive Declarations ------------>
+	// Reactive Declarations -------------------------------------------------------------------------------->
 	// let firstName = 'Bruce';
 	// let lastName = 'Wayne';
 	// $: fullName = `${firstName} ${lastName}`;
@@ -89,7 +90,8 @@
 	// 		volume = 20;
 	// 	}
 	// }
-	// Svelte Component Props ------------>
+
+	// Svelte Component Props -------------------------------------------------------------------------------->
 	// import Greet from './components/Greet.svelte';	
 	// const name = 'Rodrigo';
 	// const channel = 'Svelte Brasil';
@@ -97,30 +99,57 @@
 	// 	name: 'Barry',
 	// 	heroName: 'Flash'
 	// }
-	// Context API ------------>
+
+	// Context API -------------------------------------------------------------------------------->
 	// import {setContext} from 'svelte';
 	// import ComponentC from "./components/ComponentC.svelte";
 
 	// const userName = 'Rodrigo';
 	// setContext('username-context', userName);
 
-	//Component Events ------------>
-	import Popup from "./components/Popup.svelte";
-	let showPopup = false;
+	// Component Events -------------------------------------------------------------------------------->
+	// import Popup from "./components/Popup.svelte";
+	// let showPopup = false;
+	
+	// function closePopup(event){
+	// 	console.log(event.detail);
+	// 	showPopup = false;
+	// }
+	
+	// Event Forwarding -------------------------------------------------------------------------------->
+	// import Outter from "./components/Outter.svelte";
+	// import Button from "./components/Button.svelte";
+	// 	function handleGreet(event){
+	// 		alert(event.detail);
+	// 	}
 
+	// Slots -------------------------------------------------------------------------------->
+	import Card from "./components/Card.svelte";
 </script>
 
+
+
 <main>
-	<!-- Component Events -->
+	 <!-- Slots -->
+	<!-- <Card content='Card content 1'/>
+	<Card content='Card content 2'/> -->
+	<Card>Card Content</Card>
+	<!--Event Forwarding
+	<Outter on:greet={handleGreet}/>
+	<Button on:click={() => alert('Clicked')}>Click</Button>
+	-------------------------------------------------------------------------------->
+
+	<!-- Component Events 
 	<button on:click={() => (showPopup = true)}>Show Popup</button>
 	{#if showPopup}
-		<Popup on:close={() => (showPopup = false)} />
+		<Popup on:close={closePopup} />
 	{/if}
+	-------------------------------------------------------------------------------->
 
 	<!-- Context API 
 	<h2>App Component Username - {userName}</h2>
 	<ComponentC />
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Svelte Components Props 
 	<Greet name='Bruce' heroName='Batman'/>
@@ -128,7 +157,7 @@
 	<Greet name='Diana' heroName='Wonder Woman'/>
 	<Greet {name} heroName={channel}/>
 	<Greet {...obj}/> 
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Reactive Declarations 
 	<h2>Current volume {volume}</h2>
@@ -144,7 +173,7 @@
 	<h2>
 		Total - {total}
 	</h2> 
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Form Handling 
 	<div>
@@ -207,15 +236,15 @@
 		</div>
 		<button>Submit</button>
 	</form>
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Event Handling
 	<button on:click={handleClick}>Count {count}</button>
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Inline Event Handling 
 	<button on:click={() => (count = count + 1)}>Count {count}</button>
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- List Rendering
 		{#each fullNames as name, index(name.last)}
@@ -225,7 +254,7 @@
 		{#each names as name, index(name)}
 		<h1>{index + 1} {name}</h1>
 		{/each} 
-	-->
+	-------------------------------------------------------------------------------->
 
 	<!-- Conditional Rendering 
 	{#if num === 0 }
@@ -265,7 +294,7 @@
 
 	<!-- Binding Attributes
 	<button {disabled}>Bind</button> 
-	-->
+	-------------------------------------------------------------------------------->
 </main>
 
 <style>

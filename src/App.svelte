@@ -89,13 +89,34 @@
 	// 		volume = 20;
 	// 	}
 	// }
-	// Svelte Component ------------>
-	import Greet from './components/greet.svelte';	
+	// Svelte Component Props ------------>
+	// import Greet from './components/Greet.svelte';	
+	// const name = 'Rodrigo';
+	// const channel = 'Svelte Brasil';
+	// const obj = {
+	// 	name: 'Barry',
+	// 	heroName: 'Flash'
+	// }
+	// Context API ------------>
+	import {setContext} from 'svelte';
+	import ComponentC from "./components/ComponentC.svelte";
+
+	const userName = 'Rodrigo';
+	setContext('username-context', userName);
 </script>
 
 <main>
-	<!-- Svelte Components -->
-	<Greet/>
+	<!-- Context API -->
+	<h2>App Component Username - {userName}</h2>
+	<ComponentC />
+
+	<!-- Svelte Components Props 
+	<Greet name='Bruce' heroName='Batman'/>
+	<Greet name='Clark' heroName='Superman'/>
+	<Greet name='Diana' heroName='Wonder Woman'/>
+	<Greet {name} heroName={channel}/>
+	<Greet {...obj}/> -->
+
 	<!-- Reactive Declarations 
 	<h2>Current volume {volume}</h2>
 	<button on:click={() => (volume += 2)}>Increase Volume</button><br>

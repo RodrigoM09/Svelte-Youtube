@@ -134,6 +134,9 @@
 	<!-- <Card content='Card content 1'/>
 	<Card content='Card content 2'/> -->
 	<Card>Card Content</Card>
+	<Card><h2>Card Content</h2></Card> 
+	<Card><img src="https://picsum.photos/200" alt=""></Card>
+	<Card />
 	<!--Event Forwarding
 	<Outter on:greet={handleGreet}/>
 	<Button on:click={() => alert('Clicked')}>Click</Button>

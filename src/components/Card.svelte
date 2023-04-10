@@ -4,7 +4,7 @@
 </script>
 <div class="card">{content}</div> -->
 
-<div class="card"><slot/></div>
+<div class="card"><slot>Default Content</slot></div>
 
 <style>
     .card {

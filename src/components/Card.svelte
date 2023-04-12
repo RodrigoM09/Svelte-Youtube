@@ -4,7 +4,17 @@
 </script>
 <div class="card">{content}</div> -->
 
-<div class="card"><slot>Default Content</slot></div>
+<div class="card">
+    <div class="card-header">
+        <slot name="header"></slot>
+    </div>
+    <div class="card-content">
+        <slot name="content">Default Content</slot>
+    </div>
+    <div class="card-footer">
+        <slot name="footer"></slot>
+    </div>
+</div>
 
 <style>
     .card {

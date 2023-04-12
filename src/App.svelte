@@ -125,6 +125,7 @@
 
 	// Slots -------------------------------------------------------------------------------->
 	import Card from "./components/Card.svelte";
+
 </script>
 
 
@@ -137,6 +138,19 @@
 	<Card><h2>Card Content</h2></Card> 
 	<Card><img src="https://picsum.photos/200" alt=""></Card>
 	<Card />
+	
+	<Card>
+		<div slot="header">
+			<h3>Header</h3>
+		</div>
+		<div slot="content">
+			<img src="https://picsum.photos/200" alt="">
+		</div>
+		<div class="footer">
+			<button>View Details</button>
+		</div>
+	</Card>
+
 	<!--Event Forwarding
 	<Outter on:greet={handleGreet}/>
 	<Button on:click={() => alert('Clicked')}>Click</Button>

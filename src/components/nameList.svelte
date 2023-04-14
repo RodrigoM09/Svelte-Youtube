@@ -14,3 +14,6 @@
         }
     ]
 </script>
+{#each names as name(name)}
+    <h3>{name.firsName} {name.lastName}</h3>
+{/each}

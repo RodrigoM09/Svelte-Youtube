@@ -124,7 +124,10 @@
 	// 	}
 
 	// Slots -------------------------------------------------------------------------------->
-	import Card from "./components/Card.svelte";
+	// import Card from "./components/Card.svelte";
+
+	// Component Styles -------------------------------------------------------------------------------->
+	import NameList from "./components/nameList.svelte";
 
 </script>
 
@@ -134,7 +137,7 @@
 	 <!-- Slots -->
 	<!-- <Card content='Card content 1'/>
 	<Card content='Card content 2'/> -->
-	<Card>Card Content</Card>
+	<!-- <Card>Card Content</Card>
 	<Card><h2>Card Content</h2></Card> 
 	<Card><img src="https://picsum.photos/200" alt=""></Card>
 	<Card />
@@ -150,10 +153,11 @@
 			<button>View Details</button>
 		</div>
 	</Card>
+	-------------------------------------------------------------------------------->
 
 	<!-- Component Styles -->
-
-		</div>
+	<NameList />
+		
 
 	<!--Event Forwarding
 	<Outter on:greet={handleGreet}/>

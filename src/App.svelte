@@ -152,17 +152,7 @@
 	</Card>
 
 	<!-- Component Styles -->
-		<Card>
-		<style>
-			h3{
-				color: red;
-			}
-		</style>
-		<div slot="header">
-			<h3>Header</h3>
-		</div>
-		<div slot="content">
-			<img src="https://picsum.photos/200" alt="">
+
 		</div>
 
 	<!--Event Forwarding

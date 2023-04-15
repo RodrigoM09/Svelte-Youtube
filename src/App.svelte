@@ -131,16 +131,59 @@
 	// import ChildStyles from "./components/ChildStyles.svelte";
 	
 	// Lifecycle Hooks -------------------------------------------------------------------------------->
-	import PostList from "./components/PostList.svelte";
+	// import PostList from "./components/PostList.svelte";
+
+	// This Binding -------------------------------------------------------------------------------->
+	// import AutoFocus from "./components/AutoFocus.svelte";
+
+	// Dynamic Components -------------------------------------------------------------------------------->
+	// import TabA from "./components/TabA.svelte";
+	// import TabB from "./components/TabB.svelte";
+	// import TabC from "./components/TabC.svelte";
+
+	// let activeTab = TabA;
+
+	// Module Context -------------------------------------------------------------------------------->
+	import Counter from "./Counter.svelte";
+
 </script>
 
 
 
 <main>
-	<!-- lifecycle hooks -->
-	<!-- onMount -->
-	<PostList />
+	<!-- Module Context -->
+	<Counter />
+	<Counter />
+	<Counter />
+	
 
+
+	<!-- Dynamic Components using built in svelte element
+	<button on:click={()=>(activeTab = TabA)}>TabA</button>
+	<button on:click={()=>(activeTab = TabB)}>TabB</button>
+	<button on:click={()=>(activeTab = TabC)}>TabC</button>
+
+	<svelte:component this={activeTab}/>
+	-------------------------------------------------------------------------------->
+
+	<!-- Dynamic Components using else if for components
+		 {#if activeTab === 'TabA'}
+		<TabA/>
+	{:else if activeTab === 'TabB'}
+		<TabB/>
+	{:else if activeTab === 'TabC'}
+		<TabC/>
+	{/if} -->
+
+
+	<!-- This Binding 
+	<AutoFocus />
+	-------------------------------------------------------------------------------->
+
+	<!-- lifecycle hooks onMount
+	
+	<PostList />
+	-------------------------------------------------------------------------------->
 
 	<!-- Component Styles 
 	<NameList>

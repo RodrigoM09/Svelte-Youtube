@@ -131,14 +131,15 @@
 	// import ChildStyles from "./components/ChildStyles.svelte";
 	
 	// Lifecycle Hooks -------------------------------------------------------------------------------->
-	
-
+	import PostList from "./components/PostList.svelte";
 </script>
 
 
 
 <main>
 	<!-- lifecycle hooks -->
+	<!-- onMount -->
+	<PostList />
 
 
 	<!-- Component Styles 
@@ -338,12 +339,12 @@
 </main>
 
 <style> 
-/* :global(h3){
+:global(h3){
 	color: blue;
 }
 	h4{
 		color: orange;
-	} */
+	}
 	/* input + label {
 		display: inline-flex;
 	} */

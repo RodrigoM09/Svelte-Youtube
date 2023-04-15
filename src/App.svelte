@@ -144,17 +144,32 @@
 	// let activeTab = TabA;
 
 	// Module Context -------------------------------------------------------------------------------->
-	import Counter from "./Counter.svelte";
+	// import Counter, { getTotalCount } from "./Counter.svelte";
+
+	// Writable Stores -------------------------------------------------------------------------------->
+	import Display from "./components/Display.svelte";
+  	import Increment from "./components/Increment.svelte";
+	import Decrement from "./components/Decrement.svelte";
+	import Reset from "./components/Reset.svelte";
 
 </script>
 
 
 
 <main>
-	<!-- Module Context -->
+	<!-- Writable Stores -->
+	<Display />
+	<Increment />
+	<Decrement />
+	<Reset />
+
+	<!-- Module Context 
+	<button on:click={() => alert(getTotalCount())}>Alert Total Count</button>
 	<Counter />
 	<Counter />
 	<Counter />
+	-------------------------------------------------------------------------------->
+	
 	
 
 

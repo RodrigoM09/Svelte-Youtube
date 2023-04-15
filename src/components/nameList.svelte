@@ -1,19 +1,24 @@
 <script>
     const names = [
         {
-            firsName: 'Bruce',
+            firstName: 'Bruce',
             lastName: 'Wayne'
         },
         {
-            firsName: 'Clark',
+            firstName: 'Clark',
             lastName: 'Kent'
         },
         {
-            firsName: 'Diana',
+            firstName: 'Diana',
             lastName: 'Prince'
         }
     ]
 </script>
-{#each names as name(name)}
+
+<!-- {#each names as name(name)}
     <h3>{name.firsName} {name.lastName}</h3>
+{/each} -->
+
+{#each names as name(name)}
+   <slot name='hero' firstName={name.firstName} lastName={name.lastName}/>
 {/each}

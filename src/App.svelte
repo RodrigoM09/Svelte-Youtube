@@ -127,13 +127,32 @@
 	// import Card from "./components/Card.svelte";
 
 	// Component Styles -------------------------------------------------------------------------------->
-	import NameList from "./components/nameList.svelte";
+	// import NameList from "./components/NameList.svelte";
+	// import ChildStyles from "./components/ChildStyles.svelte";
+	
+	// Lifecycle Hooks -------------------------------------------------------------------------------->
+	
 
 </script>
 
 
 
 <main>
+	<!-- lifecycle hooks -->
+
+
+	<!-- Component Styles 
+	<NameList>
+		<h3 slot='hero', let:firstName let:lastName> {firstName}, {lastName}</h3>
+	</NameList> 
+	<h4>App Component Text</h4>
+	<h3>App Component Global Style</h3>
+
+
+	<ChildStyles />
+	-------------------------------------------------------------------------------->
+
+
 	 <!-- Slots -->
 	<!-- <Card content='Card content 1'/>
 	<Card content='Card content 2'/> -->
@@ -154,10 +173,6 @@
 		</div>
 	</Card>
 	-------------------------------------------------------------------------------->
-
-	<!-- Component Styles -->
-	<NameList />
-		
 
 	<!--Event Forwarding
 	<Outter on:greet={handleGreet}/>
@@ -322,10 +337,16 @@
 	-------------------------------------------------------------------------------->
 </main>
 
-<style>
-	input + label {
+<style> 
+/* :global(h3){
+	color: blue;
+}
+	h4{
+		color: orange;
+	} */
+	/* input + label {
 		display: inline-flex;
-	}
+	} */
 	/* .underlined{
 		text-decoration: underline;
 	}

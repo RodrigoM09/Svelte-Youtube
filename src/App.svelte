@@ -147,22 +147,40 @@
 	// import Counter, { getTotalCount } from "./Counter.svelte";
 
 	// Writable Stores -------------------------------------------------------------------------------->
+	// import Display from "./components/Display.svelte";
+  	// import Increment from "./components/Increment.svelte";
+	// import Decrement from "./components/Decrement.svelte";
+	// import Reset from "./components/Reset.svelte";
+
+	// Readable and Derived Stores -------------------------------------------------------------------------------->
+	// import Timer from "./components/Timer.svelte";
+
+	//Custom Stores -------------------------------------------------------------------------------->
 	import Display from "./components/Display.svelte";
-  	import Increment from "./components/Increment.svelte";
-	import Decrement from "./components/Decrement.svelte";
-	import Reset from "./components/Reset.svelte";
 
 </script>
 
 
 
 <main>
-	<!-- Writable Stores -->
+
+	<!--Custom Stores -->
+	<Display />
+
+
+	<!-- Readable and Derived Stores
+	<Timer />
+	-------------------------------------------------------------------------------->
+
+
+	<!-- Writable Stores 
 	<Display />
 	<Increment />
 	<Decrement />
 	<Reset />
+	-------------------------------------------------------------------------------->
 
+	
 	<!-- Module Context 
 	<button on:click={() => alert(getTotalCount())}>Alert Total Count</button>
 	<Counter />
